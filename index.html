@@ -2,52 +2,70 @@
 <html>
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="./output.css" rel="stylesheet">
-    <title>Contracting CnC Machining</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    
-    
-    <script>
-        tailwind.config = {
-            darkMode: 'media',
-        }
-    </script>
-    
-    <script src="https://unpkg.com/alpinejs" defer></script>
-    
-    <!-- Font Awesome-->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-    
-    <!--E-mail form javascript-->
-    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
-    
-    <script type="text/javascript">
-            (function () {
-                // https://dashboard.emailjs.com/admin/account
-                emailjs.init({
-                    publicKey: "pTo4gDsgYw5dLY035",
-                });
-            })();
-    </script>
-    
-    <!--JS for email submit-->
-    <script type="text/javascript">
-        window.onload = function () {
-            document.getElementById('contact-form').addEventListener('submit', function (event) {
-                event.preventDefault();
-                // these IDs from the previous steps
-                emailjs.sendForm('service_mgrcz97', 'template_b3181om', this)
-                    .then(() => {
-                        console.log('SUCCESS!');
-                        location.reload();
-                    }, (error) => {
-                        console.log('FAILED...', error);
-                    });
-            });
-        }
-    </script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- SEO Meta Tags -->
+  <meta name="description"
+    content="Contracting CNC Machining specializes in precision fasteners, CNC machining services, and high-quality manufacturing solutions in Riviera Beach, FL.">
+  <meta name="keywords"
+    content="CNC machining, precision fasteners, manufacturing, Riviera Beach, custom fasteners, metal fabrication">
+  <meta name="author" content="Contracting CNC Machining">
+  <meta name="robots" content="index, follow">
+  <title>Contracting CNC Machining | Precision Fasteners & CNC Services</title>
+  
+  <!-- Open Graph for Social Sharing -->
+  <meta property="og:title" content="Contracting CNC Machining - Precision Fasteners & CNC Services">
+  <meta property="og:description"
+    content="Delivering high-quality CNC-machined fasteners and manufacturing services since 2006. Trusted nationwide.">
+  <meta property="og:image" content="https://alexandermarcell.github.io/CnC_website/images/hero.jpg">
+  <meta property="og:url" content="https://alexandermarcell.github.io/CnC_website/">
+  <meta name="twitter:card" content="summary_large_image">
+
+  
+  <link href="./output.css" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  
+  
+  <script>
+      tailwind.config = {
+          darkMode: 'media',
+      }
+  </script>
+  
+  <script src="https://unpkg.com/alpinejs" defer></script>
+  
+  <!-- Font Awesome-->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  
+  <!--E-mail form javascript-->
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+  
+  <script type="text/javascript">
+          (function () {
+              // https://dashboard.emailjs.com/admin/account
+              emailjs.init({
+                  publicKey: "pTo4gDsgYw5dLY035",
+              });
+          })();
+  </script>
+  
+  <!--JS for email submit-->
+  <script type="text/javascript">
+      window.onload = function () {
+          document.getElementById('contact-form').addEventListener('submit', function (event) {
+              event.preventDefault();
+              // these IDs from the previous steps
+              emailjs.sendForm('service_mgrcz97', 'template_b3181om', this)
+                  .then(() => {
+                      console.log('SUCCESS!');
+                      location.reload();
+                  }, (error) => {
+                      console.log('FAILED...', error);
+                  });
+          });
+      }
+  </script>
 </head>
 
 <body class="flex flex-col mx-auto bg-white text-black dark:bg-gray-900 dark:text-white min-w-sm w-svh max-w-5xl font-serif">
