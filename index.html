@@ -1,0 +1,309 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="./output.css" rel="stylesheet">
+    <title>Contracting CnC Machining</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    
+    <script>
+        tailwind.config = {
+            darkMode: 'media',
+        }
+    </script>
+    
+    <script src="https://unpkg.com/alpinejs" defer></script>
+    
+    <!-- Font Awesome-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    
+    <!--E-mail form javascript-->
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+    
+    <script type="text/javascript">
+            (function () {
+                // https://dashboard.emailjs.com/admin/account
+                emailjs.init({
+                    publicKey: "pTo4gDsgYw5dLY035",
+                });
+            })();
+    </script>
+    
+    <!--JS for email submit-->
+    <script type="text/javascript">
+        window.onload = function () {
+            document.getElementById('contact-form').addEventListener('submit', function (event) {
+                event.preventDefault();
+                // these IDs from the previous steps
+                emailjs.sendForm('service_mgrcz97', 'template_b3181om', this)
+                    .then(() => {
+                        console.log('SUCCESS!');
+                        location.reload();
+                    }, (error) => {
+                        console.log('FAILED...', error);
+                    });
+            });
+        }
+    </script>
+</head>
+
+<body class="flex flex-col bg-white text-black dark:bg-gray-900 dark:text-white min-w-sm w-svh max-w-5xl mx-auto font-serif">
+  <div class="border-2 border-grey-200">
+    <div class="block sm:hidden text-center text-red-600 p-4 bg-yellow-100">
+      This site is best viewed on a screen 640px wide or larger.
+    </div>
+    
+    <!-- Hero Section -->
+    <header class="w-full h-[60vh] flex flex-col bg-fixed justify-center items-center text-center pb-4">
+      <div class="lg:flex-row">
+        <img class="max-w-lg" src="./images/logo2.png" alt="logo2">
+        <h1 class="text-4xl font-bold p-10">
+          8360 Currency Dr #7 <br> Riviera Beach, FL 33404
+        </h1>
+        <h2 class="text-3xl font-bold ">
+          (561) 494-0703
+        </h2>
+      </div>
+    </header>
+    <!--w-full bg-blue-700 text-white px-6 py-3 rounded-lg hover:bg-blue-800 active:scale-95 transition-->
+
+    <section id="gallery" class="py-10 bg-gray-100 dark:bg-gray-800" x-data="{ 
+               lightboxOpen: false, 
+               currentIndex: 0, 
+               images: [
+                 '/images/gallery1.jpg',
+                 '/images/gallery2.jpg',
+                 '/images/gallery3.jpg',
+                 '/images/gallery4.jpg',
+                 '/images/gallery5.jpg',
+                 '/images/gallery6.jpg',
+                 '/images/gallery7.jpg'
+               ],
+               open(index) { this.currentIndex = index; this.lightboxOpen = true },
+               next() { this.currentIndex = (this.currentIndex + 1) % this.images.length },
+               prev() { this.currentIndex = (this.currentIndex - 1 + this.images.length) % this.images.length }
+             }">
+    
+      <h2 class="text-3xl font-bold text-center mb-8">Photo Gallery</h2>
+    
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 max-w-6xl mx-auto px-4">
+    
+        <!-- Column 1 -->
+        <div class="flex flex-col gap-4">
+          <template x-for="(img, index) in images.slice(0, 3)" :key="index">
+            <img @click="open(index)" :src="img" class="rounded-lg shadow-md object-cover cursor-pointer">
+          </template>
+        </div>
+    
+        <!-- Column 2 -->
+        <div class="flex flex-col gap-4">
+          <template x-for="(img, index) in images.slice(3, 5)" :key="index + 3">
+            <img @click="open(index + 3)" :src="img" class="rounded-lg shadow-md object-cover cursor-pointer">
+          </template>
+        </div>
+    
+        <!-- Column 3 -->
+        <div class="flex flex-col gap-4">
+          <template x-for="(img, index) in images.slice(5)" :key="index + 5">
+            <img @click="open(index + 5)" :src="img" class="rounded-lg shadow-md object-cover cursor-pointer">
+          </template>
+        </div>
+    
+      </div>
+    
+      <!-- Lightbox Modal -->
+      <div x-show="lightboxOpen" x-transition
+        class="fixed inset-0 bg-black bg-opacity-90 flex items-center justify-center z-50"
+        @click.self="lightboxOpen = false">
+    
+        <!-- Image -->
+        <img :src="images[currentIndex]" class="max-h-[90vh] max-w-[90vw] rounded-lg shadow-xl" />
+    
+        <!-- Close Button -->
+        <button @click="lightboxOpen = false"
+          class="absolute top-4 right-6 text-white text-3xl font-bold hover:text-red-500 transition">
+          &times;
+        </button>
+    
+        <!-- Prev Arrow -->
+        <button @click.stop="prev()" class="absolute left-4 text-white text-5xl hover:text-blue-400 transition">
+          &#10094;
+        </button>
+    
+        <!-- Next Arrow -->
+        <button @click.stop="next()" class="absolute right-4 text-white text-5xl hover:text-blue-400 transition">
+          &#10095;
+        </button>
+      </div>
+    </section>
+    
+    <!-- Services Section -->
+    <section id="services" class="text-center text-sm lg:text-lg sm:flex-col lg:flex-row p-20">
+      <h2 class="text-3xl font-semibold mb-8">
+        🔍 What We Offer
+      </h2>
+      <div class="flex flex-col lg:flex-row justify-center lg:gap-8">
+        <div class="flex flex-col">
+          <p class="font-medium sm:p-2 lg:p-4">
+            Custom and standard fasteners
+    
+          </p>
+          <p class="font-medium sm:pg-2 lg:p-4">
+            Tight-tolerance CNC machining
+          </p>
+        </div>
+        <div class="flex flex-col justify-center">
+          <p class="font-medium sm:p-2 lg:p-4">
+            Lot traceability and material certs
+          </p>
+          <p class="font-medium sm:p-2 lg:p-4">
+            Short lead times and responsive communication
+          </p>
+        </div>
+        <div class="flex flex-col justify-center">
+          <p class="font-medium sm:p-2 lg:p-4">
+            Small and mid-volume production runs
+          </p>
+          <p class="font-medium sm:p-2 lg:p-4">
+            DFARS-compliant sourcing available
+          </p>
+        </div>
+      </div>
+    </section>
+    
+    <!-- Projects Section -->
+    <section class="flex flex-col lg:flex-row justify-center object-cover py-8 mx-auto text-center bg-gray-100 dark:bg-gray-800">
+      <div class="flex-col w-full justify-center lg:content-center p-8 m-4">
+        <h2 class="text-xsm lg:text-3xl font-semibold mb-4">
+          📩 Submit an RFQ
+        </h2>
+        <p class="max-w-2xl mx-auto mb-6">
+          We welcome Requests for Quote (RFQs) for both standard and <br> custom jobs—especially those where reliability and
+          turnaround <br>
+          time matter most.
+        </p>
+        <p class="max-w-2xl mx-auto mb-6">
+          > 📞 Have a print ready or a critical job on your desk? <br>
+          Email us at [your email] or use the RFQ submission form below.
+        </p>
+        <p class="max-w-2xl mx-auto mb-6 pb-8">
+          Whether you’re building aircraft systems, pressure vessels, <br> medical devices, or mission-critical
+          assemblies—we’re here
+          to <br> help you get it right the first time.
+        </p>
+        <a href="#contact"
+          class="bg-blue-500 hover:bg-blue-700 text-white w-48 lg:w-64 py-3 px-12 inline-block shadow-2xl rounded-2xl transform active:translate-y-[2px] transition-transform duration-150 ease-out">
+          Contact Us
+        </a>
+      </div>
+      <div class="sm:w-sm lg:w-xl justify-center object-cover w-sm lg:w-lg xl:max-w-xl object-cover p-16 m-4">
+        <img src="./images/equipment3.jpg" alt="josh Katta projects" class="mx-auto rounded-sm">
+      </div>
+    </section>
+    
+    <!-- About Us Section -->
+    <section
+      class="flex flex-col lg:flex-row items-center justify-center object-cover py-16 text-center">
+      <div class="justify-center content-center align-center sm:w-xsm lg:max-w-lg xl:max-w-xl object-cover p-4 ">
+        <img src="./images/teams.jpg" alt="Josh Katta Team" class="mx-auto rounded-sm">
+      </div>
+      <div class="w-full justify-center content-center m-8 p-4 lg:text-sm">
+        <h2 class="text-3xl font-semibold mb-4">
+          About Us
+        </h2>
+        <p class="mx-auto mb-6">
+          We’ve been delivering high-quality CNC-machined fasteners since 2006 — built to exacting standards for industries
+          that
+          demand nothing less. From one-off prototypes to full production runs, we’re known for our tight tolerances,
+          consistent
+          quality, and dependable turnaround times.
+        </p>
+        <p class="mx-auto mb-6">
+          As a family-run business with nearly two decades of experience, we combine hands-on expertise with modern CNC
+          technology
+          to deliver the kind of fasteners you can count on — every time.
+        </p>
+        <p class="mx-auto mb-6">
+          🔩 Made in the USA. Trusted Nationwide. Delivered On Time.
+        </p>
+        <p class="mx-auto mb-6">
+          Let’s build something that lasts.
+        </p>
+      </div>
+    </section>
+    
+    <!-- Serivices Section -->
+    
+    <section id="brochure" class="flex flex-col items-center py-20 text-center bg-gray-100 dark:bg-gray-800">
+      <h2 class="text-3xl font-bold mb-4">Company Brochure</h2>
+      <p class="mb-8 text-lg">Download our brochure to learn more about our CNC machining services.</p>
+      <a href="./asssets/CNC line card 1-25-1.pdf" download
+        class="bg-blue-500 hover:bg-blue-700 max-w-md text-white shadow-2xl px-6 py-3 rounded-2xl shadow-xl active:translate-y-[2px] transition-transform duration-150 ease-out">
+        📄 Download Brochure
+      </a>
+    </section>
+    
+    <!-- contact Section -->
+    <section id="contact" class="py-12 flex flex-col lg:items-center justify-center">
+        <!-- Header -->
+        <div class="text-center py-8">
+            <h2 class="uppercase text-2xl font-semibold mb-4">Get in Touch</h2>
+            <p class="mb-6 text-xl">Stay updated with our latest news</p>
+        </div>
+    
+        <article class="flex flex-col lg:flex-row flex-wrap justify-center items-center max-w-screen-xl mx-auto gap-8 px-4">
+            <!-- Map -->
+            <div class="flex justify-center items-center w-full lg:w-1/2">
+                <iframe
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d7122.569083044575!2d-80.09464552382428!3d26.799067076715026!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x88d8d567282e928d%3A0xee1fb5051a1ae1ae!2s8360%20Currency%20Dr%20%23%207%2C%20Riviera%20Beach%2C%20FL%2033404!5e0!3m2!1sen!2sus!4v1753418667294!5m2!1sen!2sus"
+                    class="w-full max-w-[500px] h-[300px] lg:h-[400px] rounded shadow-md" style="border:0;"
+                    allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade">
+                </iframe>
+            </div>
+    
+            <!-- Contact Form -->
+            <div class="w-full lg:w-[550px] xl:max-w-[600px] text-center">
+                <form id="contact-form" method="POST" action="#" class="space-y-6">
+                    <div>
+                        <label for="name" class="block mb-1 font-medium text-left">Name:</label>
+                        <input type="text" id="name" name="name" autocomplete="name" placeholder="John Smith..."
+                            class="w-full border px-4 py-2 rounded-lg" required />
+                    </div>
+    
+                    <div>
+                        <label for="email" class="block mb-1 font-medium text-left">E-mail:</label>
+                        <input type="email" id="email" name="email" autocomplete="email" placeholder="you@email.com"
+                            class="w-full border px-4 py-2 rounded-lg" required />
+                    </div>
+    
+                    <div>
+                        <label for="message" class="block mb-1 font-medium text-left">Message:</label>
+                        <textarea id="message" name="message" placeholder="Your Message here..."
+                            class="w-full h-32 border px-4 py-2 rounded-lg align-top" required></textarea>
+                    </div>
+    
+                    <button type="submit"
+                        class="w-full bg-blue-500 hover:bg-blue-700 text-white px-6 py-3 shadow-2xl rounded-2xl transform active:translate-y-[6px] transition-transform duration-150 ease-out">
+                        Send
+                    </button>
+                </form>
+                <!-- Success Message -->
+                <div x-show="submitted" x-transition
+                    class="mt-4 p-4 bg-green-100 border border-green-300 text-green-700 rounded-2xl shadow">
+                    ✅ Your message has been sent successfully!
+                </div>
+            </div>
+        </article>
+    </section>
+    
+    <!-- Footer -->
+    <footer class="dark:bg-gray-800 py-8 text-center text-sm text-gray-600 bg-gray-100 dark:bg-gray-800">
+      <p>© 2025 Contracting CnC Machining. All rights reserved.</p>
+    </footer>
+  </div>
+</body>
+
+</html>
