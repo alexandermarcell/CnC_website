@@ -89,47 +89,30 @@
     <!--w-full bg-blue-700 text-white px-6 py-3 rounded-lg hover:bg-blue-800 active:scale-95 transition-->
 
     <section id="gallery" class="py-10 bg-gray-100 dark:bg-gray-800" x-data="{ 
-               lightboxOpen: false, 
-               currentIndex: 0, 
-               images: [
-                 './images/gallery1.jpg',
-                 './images/gallery2.jpg',
-                 './images/gallery3.jpg',
-                 './images/gallery4.jpg',
-                 './images/gallery5.jpg',
-                 './images/gallery6.jpg',
-                 './images/gallery7.jpg'
-               ],
-               open(index) { this.currentIndex = index; this.lightboxOpen = true },
-               next() { this.currentIndex = (this.currentIndex + 1) % this.images.length },
-               prev() { this.currentIndex = (this.currentIndex - 1 + this.images.length) % this.images.length }
-             }">
+      lightboxOpen: false, 
+      currentIndex: 0, 
+      images: [
+        './images/gallery1.jpg',
+        './images/gallery2.jpg',
+        './images/gallery3.jpg',
+        './images/gallery4.jpg',
+        './images/gallery5.jpg',
+        './images/gallery6.jpg',
+        './images/gallery7.jpg'
+      ],
+      open(index) { this.currentIndex = index; this.lightboxOpen = true },
+      next() { this.currentIndex = (this.currentIndex + 1) % this.images.length },
+      prev() { this.currentIndex = (this.currentIndex - 1 + this.images.length) % this.images.length }
+    }">
     
       <h2 class="text-3xl font-bold text-center mb-8">Photo Gallery</h2>
     
+      <!-- Responsive Grid -->
       <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 max-w-6xl mx-auto px-4">
-    
-        <!-- Column 1 -->
-        <div class="flex flex-col gap-4">
-          <template x-for="(img, index) in images.slice(0, 3)" :key="index">
-            <img @click="open(index)" :src="img" class="rounded-lg shadow-md object-cover cursor-pointer">
-          </template>
-        </div>
-    
-        <!-- Column 2 -->
-        <div class="flex flex-col gap-4">
-          <template x-for="(img, index) in images.slice(3, 5)" :key="index + 3">
-            <img @click="open(index + 3)" :src="img" class="rounded-lg shadow-md object-cover cursor-pointer">
-          </template>
-        </div>
-    
-        <!-- Column 3 -->
-        <div class="flex flex-col gap-4">
-          <template x-for="(img, index) in images.slice(5)" :key="index + 5">
-            <img @click="open(index + 5)" :src="img" class="rounded-lg shadow-md object-cover cursor-pointer">
-          </template>
-        </div>
-    
+        <template x-for="(img, index) in images" :key="index">
+          <img @click="open(index)" :src="img" class="w-full h-auto rounded-lg shadow-md object-cover cursor-pointer"
+            alt="Gallery image">
+        </template>
       </div>
     
       <!-- Lightbox Modal -->
@@ -138,24 +121,25 @@
         @click.self="lightboxOpen = false">
     
         <!-- Image -->
-        <img :src="images[currentIndex]" class="max-h-[90vh] max-w-[90vw] rounded-lg shadow-xl" alt="CNC machine working on precision fasteners" />
+        <img :src="images[currentIndex]" class="max-h-[90vh] max-w-[90vw] rounded-lg shadow-xl" alt="Gallery full view" />
     
         <!-- Close Button -->
         <button @click="lightboxOpen = false"
-          class="absolute top-4 right-6 text-white text-3xl font-bold hover:text-red-500 transition">
+          class="absolute top-4 right-6 text-white text-3xl font-bold hover:text-red-500 active:translate-y-[2px] transition-transform duration-150 ease-out">
           &times;
         </button>
     
         <!-- Prev Arrow -->
-        <button @click.stop="prev()" class="absolute left-4 text-white text-5xl hover:text-blue-400 transition">
+        <button @click.stop="prev()" class="absolute left-4 text-white text-5xl hover:text-blue-400 active:translate-y-[2px] transition-transform duration-150 ease-out">
           &#10094;
         </button>
     
         <!-- Next Arrow -->
-        <button @click.stop="next()" class="absolute right-4 text-white text-5xl hover:text-blue-400 transition">
+        <button @click.stop="next()" class="absolute right-4 text-white text-5xl hover:text-blue-400 active:translate-y-[2px] transition-transform duration-150 ease-out">
           &#10095;
         </button>
       </div>
+    
     </section>
     
     <!-- Services Section -->
@@ -213,7 +197,7 @@
           to <br> help you get it right the first time.
         </p>
         <a href="#contact"
-          class="bg-blue-500 hover:bg-blue-700 text-white w-48 lg:w-64 py-3 px-12 inline-block shadow-2xl rounded-2xl transform active:translate-y-[2px] transition-transform duration-150 ease-out">
+          class="bg-blue-500 hover:bg-blue-700 text-white w-48 lg:w-64 py-3 px-12 inline-block shadow-2xl rounded-2xl active:translate-y-[2px] transition-transform duration-150 ease-out">
           Contact Us
         </a>
       </div>
@@ -304,7 +288,7 @@
                     </div>
     
                     <button type="submit"
-                        class="w-full bg-blue-500 hover:bg-blue-700 text-white px-6 py-3 shadow-2xl rounded-2xl transform active:translate-y-[6px] transition-transform duration-150 ease-out">
+                        class="w-full bg-blue-500 hover:bg-blue-700 text-white px-6 py-3 shadow-2xl rounded-2xl active:translate-y-[6px] transition-transform duration-150 ease-out">
                         Send
                     </button>
                 </form>
