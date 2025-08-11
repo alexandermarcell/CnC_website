@@ -12,6 +12,14 @@
     content="CNC machining, precision fasteners, manufacturing, Riviera Beach, custom fasteners, metal fabrication">
   <meta name="author" content="Contracting CNC Machining">
   <meta name="robots" content="index, follow">
+
+  <!-- font -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto+Flex:opsz,wght@8..144,100..1000&display=swap"
+    rel="stylesheet">
+
+  <!-- Title -->  
   <title>Contracting CNC Machining | Precision Fasteners & CNC Services</title>
   
   <!-- Open Graph for Social Sharing -->
@@ -68,20 +76,20 @@
   </script>
 </head>
 
-<body class="flex flex-col mx-auto bg-white text-black dark:bg-gray-900 dark:text-white min-w-sm w-svh max-w-5xl font-serif">
+<body class="flex flex-col mx-auto bg-white text-black dark:bg-gray-900 dark:text-white min-w-sm w-svh max-w-6xl text-center text-sm lg:text-lg font-[Roboto Flex]">
   <div class="border-2 border-grey-200 items-center">
     <div class="block sm:hidden text-center text-red-600 p-4 bg-yellow-100">
       This site is best viewed on a screen 640px wide or larger.
     </div>
     
     <!-- Hero Section -->
-    <header class="w-full h-[60vh] flex flex-col mx-auto bg-fixed justify-center items-center text-center py-4">
+    <header class="w-full flex flex-col mx-auto bg-fixed justify-center items-center py-4">
       <div class="lg:flex-row">
-        <img class="mx-auto w-3/5 md:w-4/5 lg:w-lg" src="./images/logo2.png" alt="CNC machine working on precision fasteners logo">
-        <h1 class="sm:text-md md:text-2xl lg:text-3xl font-bold p-10">
+        <img class="mx-auto w-3/5 md:w-3/6 lg:w-lg" src="./images/logo2.png" alt="CNC machine working on precision fasteners logo">
+        <h1 class="text-lg md:text-xl lg:text-2xl font-bold p-6">
           8360 Currency Dr #7 <br> Riviera Beach, FL 33404
         </h1>
-        <h2 class="sm:text-md md:text-2xl lg:text-3xl font-bold ">
+        <h2 class="text-lg md:text-xl lg:text-2xl pb-8 font-bold ">
           (561) 494-0703
         </h2>
       </div>
@@ -105,12 +113,12 @@
       prev() { this.currentIndex = (this.currentIndex - 1 + this.images.length) % this.images.length }
     }">
     
-      <h2 class="text-3xl font-bold text-center mb-8">Photo Gallery</h2>
+      <h2 class="text-xl lg:text-2xl font-bold mb-8">Photo Gallery</h2>
     
       <!-- Responsive Grid -->
       <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 max-w-6xl mx-auto px-4">
         <template x-for="(img, index) in images" :key="index">
-          <img @click="open(index)" :src="img" class="w-full h-auto rounded-lg shadow-md object-cover cursor-pointer"
+          <img @click="open(index)" :src="img" class="w-[70vw] h-auto mx-auto rounded-lg shadow-md object-cover cursor-pointer"
             alt="Gallery image">
         </template>
       </div>
@@ -143,33 +151,33 @@
     </section>
     
     <!-- Services Section -->
-    <section id="services" class="text-center text-sm lg:text-lg sm:flex-col lg:flex-row p-20">
-      <h2 class="text-3xl font-semibold mb-8">
+    <section id="services" class="sm:flex-col lg:flex-row p-20">
+      <h2 class="text-xl lg:text-2xl font-bold mb-8">
         🔍 What We Offer
       </h2>
       <div class="flex flex-col lg:flex-row justify-center lg:gap-8">
         <div class="flex flex-col">
-          <p class="font-medium sm:p-2 lg:p-4">
+          <p class="sm:p-2 lg:p-4">
             Custom and standard fasteners
     
           </p>
-          <p class="font-medium sm:pg-2 lg:p-4">
+          <p class="sm:pg-2 lg:p-4">
             Tight-tolerance CNC machining
           </p>
         </div>
         <div class="flex flex-col justify-center">
-          <p class="font-medium sm:p-2 lg:p-4">
+          <p class="sm:p-2 lg:p-4">
             Lot traceability and material certs
           </p>
-          <p class="font-medium sm:p-2 lg:p-4">
+          <p class="sm:p-2 lg:p-4">
             Short lead times and responsive communication
           </p>
         </div>
         <div class="flex flex-col justify-center">
-          <p class="font-medium sm:p-2 lg:p-4">
+          <p class="sm:p-2 lg:p-4">
             Small and mid-volume production runs
           </p>
-          <p class="font-medium sm:p-2 lg:p-4">
+          <p class="sm:p-2 lg:p-4">
             DFARS-compliant sourcing available
           </p>
         </div>
@@ -177,9 +185,9 @@
     </section>
     
     <!-- Projects Section -->
-    <section class="flex flex-col lg:flex-row justify-center object-cover py-8 mx-auto text-center bg-gray-100 dark:bg-gray-800">
+    <section class="flex flex-col lg:flex-row justify-center object-cover py-8 mx-auto bg-gray-100 dark:bg-gray-800">
       <div class="flex-col w-full justify-center lg:content-center p-8 m-4">
-        <h2 class="text-xsm lg:text-3xl font-semibold mb-4">
+        <h2 class="text-xl lg:text-2xl font-bold mb-4">
           📩 Submit an RFQ
         </h2>
         <p class="max-w-2xl mx-auto mb-6">
@@ -208,24 +216,24 @@
     
     <!-- About Us Section -->
     <section
-      class="flex flex-col lg:flex-row items-center justify-center object-cover py-16 text-center">
-      <div class="justify-center content-center align-center sm:w-xsm lg:max-w-lg xl:max-w-xl object-cover p-4 ">
+      class="flex flex-col lg:flex-row items-center justify-center object-cover py-16">
+      <div class="justify-center content-center align-center w-md mx-auto lg:w-xl xl:max-w-xl object-cover p-16 m-4 ">
         <img src="./images/teams.jpg" alt="CNC machine working on precision fasteners" class="mx-auto rounded-sm">
       </div>
-      <div class="w-full justify-center content-center m-8 p-4 lg:text-sm">
-        <h2 class="text-3xl font-semibold mb-4">
+      <div class="w-full justify-center content-center m-4 p-8 lg:text-sm">
+        <h2 class="text-xl lg:text-2xl font-bold mb-4">
           About Us
         </h2>
         <p class="mx-auto mb-6">
-          We’ve been delivering high-quality CNC-machined fasteners since 2006 — built to exacting standards for industries
+          We’ve been delivering high-quality CNC-machined fasteners since 2006 — <br> built to exacting standards for industries
           that
-          demand nothing less. From one-off prototypes to full production runs, we’re known for our tight tolerances,
+          demand nothing less. <br> From one-off prototypes to full production runs, we’re known for our <br> tight tolerances,
           consistent
           quality, and dependable turnaround times.
         </p>
         <p class="mx-auto mb-6">
-          As a family-run business with nearly two decades of experience, we combine hands-on expertise with modern CNC
-          technology
+          As a family-run business with nearly two decades of experience,<br> we combine hands-on expertise with modern CNC
+          technology <br>
           to deliver the kind of fasteners you can count on — every time.
         </p>
         <p class="mx-auto mb-6">
@@ -239,9 +247,9 @@
     
     <!-- Serivices Section -->
     
-    <section id="brochure" class="flex flex-col items-center py-20 text-center bg-gray-100 dark:bg-gray-800">
-      <h2 class="text-3xl font-bold mb-4">Company Brochure</h2>
-      <p class="mb-8 text-lg">Download our brochure to learn more about our CNC machining services.</p>
+    <section id="brochure" class="flex flex-col items-center py-20 bg-gray-100 dark:bg-gray-800">
+      <h2 class="text-xl lg:text-2xl font-bold mb-4">Company Brochure</h2>
+      <p class="mb-8">Download our brochure to learn more about our CNC machining services.</p>
       <a href="./assets/brochure.pdf" download
         class="bg-blue-500 hover:bg-blue-700 max-w-md text-white shadow-2xl px-6 py-3 rounded-2xl active:translate-y-[3px] transition-transform duration-150 ease-out">
         📄 Download Brochure
@@ -251,9 +259,9 @@
     <!-- contact Section -->
     <section id="contact" class="py-12 flex flex-col lg:items-center justify-center">
         <!-- Header -->
-        <div class="text-center py-8">
-            <h2 class="uppercase text-2xl font-semibold mb-4">Get in Touch</h2>
-            <p class="mb-6 text-xl">Stay updated with our latest news</p>
+        <div class="py-8">
+            <h2 class="uppercase text-xl lg:text-2xl font-bold mb-4">Get in Touch</h2>
+            <p class="mb-6">Stay updated with our latest news</p>
         </div>
     
         <article class="flex flex-col lg:flex-row flex-wrap justify-center items-center max-w-screen-xl mx-auto gap-8 px-4">
@@ -304,7 +312,7 @@
     
     <!-- Footer -->
     <footer class="py-8 text-center text-sm text-gray-600 bg-gray-100 dark:bg-gray-800">
-      <p>© 2025 Contracting CnC Machining. All rights reserved.</p>
+      <p class="dark:text-white font-semibold">© 2025 Contracting CnC Machining. All rights reserved.</p>
     </footer>
   </div>
 </body>
