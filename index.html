@@ -107,7 +107,6 @@
       images: [
         './images/industry_showcase1.jpg',
         './images/industry_showcase2.jpg',
-        './images/industry_showcase3.jpg',
         './images/industry_showcase4.jpg',
         './images/industry_showcase5.jpg',
       ],
@@ -119,7 +118,7 @@
       <h2 class="text-xl lg:text-2xl font-bold mb-8">Photo Gallery</h2>
     
       <!-- Responsive Grid -->
-      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 max-w-6xl mx-auto px-4">
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-4 max-w-6xl mx-auto px-4">
         <template x-for="(img, index) in images" :key="index">
           <img @click="open(index)" :src="img" class="w-[70vw] h-auto mx-auto rounded-lg shadow-md object-cover cursor-pointer"
             alt="Gallery image">
