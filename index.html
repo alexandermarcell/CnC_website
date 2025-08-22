@@ -129,7 +129,7 @@
     </div>
     
     <!-- Hero Section -->
-    <header class="inline-block w-full flex flex-col mx-auto max-w-4xl py-4">
+    <header class="w-full flex flex-col items-center justify-center mx-auto max-w-4xl py-4">
       <div class="lg:flex-row">
         <img class="mx-auto w-3/5 md:w-3/6 lg:w-lg" src="./images/logo2.png" alt="CNC machine working on precision fasteners logo">
         <h1 class="text-lg md:text-xl font-bold p-6">
@@ -144,7 +144,7 @@
     <div class="border-t-[1px] border-black dark:border-white w-[60%] mx-auto my-8 rounded-full"></div>
 
     <!--Photo Gallery Section-->
-    <section id="gallery" class="w-full flex-col mx-auto max-w-4xl py-4" x-data="{ 
+    <section id="gallery" class="w-full flex flex-col mx-auto max-w-4xl py-4" x-data="{ 
       lightboxOpen: false, 
       currentIndex: 0, 
       images: [
@@ -198,7 +198,7 @@
     <div class="border-t-[1px] border-black dark:border-white w-[60%] mx-auto my-8 rounded-full"></div>
     
     <!-- Services Section -->
-    <section id="services" class="inline-block w-full items-center justify-center flex-col mx-auto max-w-4xl py-4 text-sm">
+    <section id="services" class="w-full items-center justify-center flex flex-col mx-auto max-w-4xl py-4 text-sm">
       <h2 class="text-xl lg:text-2xl font-bold mb-8">
         What We Offer
       </h2>
@@ -233,7 +233,7 @@
     <div class="border-t-[1px] border-black dark:border-white w-[60%] mx-auto my-8 rounded-full"></div>
     
     <!-- rfq Section -->
-    <section class="w-full h-[50vh] items-center flex flex-col lg:flex-row mx-auto max-w-4xl text-sm py-4">
+    <section class="w-full items-center flex flex-col lg:flex-row mx-auto max-w-4xl text-sm py-4">
       <div class="flex-col mx-auto w-3/4 lg:w-1/2 px-2">
         <h2 class="text-xl lg:text-2xl font-bold mb-4">
           Submit an RFQ
@@ -263,7 +263,7 @@
     <div class="border-t-[1px] border-black dark:border-white w-[60%] mx-auto my-8 rounded-full"></div>
 
     <!-- About Us Section -->
-    <section class="w-full h-[50vh] items-center flex flex-col lg:flex-row mx-auto max-w-4xl py-4 text-sm">
+    <section class="w-full items-center flex flex-col lg:flex-row mx-auto max-w-4xl py-4 text-sm">
       <div class="mx-auto w-3/4 lg:w-2/5 px-2">
         <img src="./images/gallery1.jpg" alt="CNC machine working on precision fasteners" class="mx-auto rounded-sm">
       </div>
@@ -293,12 +293,12 @@
 
     <!-- Serivices Section -->
     
-    <section id="brochure" class="w-full h-[25vh] items-center justify-center flex flex-col mx-auto max-w-4xl py-4 text-sm">
+    <section id="brochure" class="w-full items-center justify-center flex flex-col mx-auto max-w-4xl py-4 text-sm">
       <h2 class="text-xl lg:text-2xl font-bold mb-4">Company Line Card</h2>
       <p class="mb-8">Download our line card to learn more about our CNC machining services.</p>
 
       <!-- modal window -->
-      <div id="modal-overlay" class="fixed inset-0 bg-black bg-opacity-75 hidden flex items-center justify-center z-50">
+      <div id="modal-overlay" class="fixed inset-0 bg-black bg-opacity-75 hidden items-center justify-center z-50">
         <div id="modal-container" class="bg-white text-black rounded-2xl shadow-xl p-10 w-full max-w-md">
           <div class="mx-auto flex justify-between items-center mb-4">
             <h2 class="text-lg font-semibold">Downlaod Our Line Card</h2>
@@ -367,7 +367,7 @@
     <div class="border-t-[1px] border-black dark:border-white w-[60%] mx-auto my-8 rounded-full"></div>
     
     <!-- contact Section -->
-    <section id="contact" class="w-full h-[50vh] items-center flex flex-col mx-auto max-w-5xl py-4 text-sm">
+    <section id="contact" class="w-full items-center flex flex-col mx-auto max-w-5xl py-4 text-sm">
       <!-- Header -->
       <div class="py-8">
           <h2 class="text-xl lg:text-2xl font-bold mb-4">Get in Touch</h2>
@@ -427,6 +427,27 @@
       </article>
     </section>
     
+    <div class="hidden border-t-[1px] border-black dark:border-white w-[60%] mx-auto my-8 rounded-full"></div>
+
+    <!-- Social Media Section -->
+
+    <section class="hidden w-full mx-auto flex-col items-center justify-center">
+      <div class="w-full items-center">
+        <h2 class="text-xl lg:text-2xl font-bold mb-4">Follow Us</h2>
+        <p class="mb-6">Stay connected through our social media channels for the latest updates and insights.</p>
+      </div>
+      <div class="flex flex-row items-center justify-center gap-8">
+        <div class="flex flex-row items-center justify-center">
+          <label for="social-media">FaceBook</label>
+          <i class="fa-brands fa-facebook-f fa-lg px-4"></i>
+        </div>
+        <div class="flex flex-row items-center justify-center">
+          <label for="linkedin">LinkedIn</label>
+          <i class="fa-brands fa-linkedin-in fa-lg px-4"></i>
+        </div>
+      </div>
+    </section>
+
     <div class="border-t-[1px] border-black dark:border-white w-[60%] mx-auto my-8 rounded-full"></div>
 
     <!-- Footer -->
