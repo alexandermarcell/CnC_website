@@ -243,7 +243,7 @@
     <div class="border-t-[1px] border-black dark:border-white w-[60%] mx-auto my-8 rounded-full"></div>
     
     <!-- rfq Section -->
-    <section class="w-full items-center flex flex-col lg:flex-row mx-auto max-w-5xl px-4 text-sm py-4">
+    <section class="w-full items-center flex flex-col lg:flex-row mx-auto max-w-4xl px-4 text-sm py-4">
       <div class="flex-col mx-auto w-2/5 lg:w-1/2 p-8">
         <h2 class="text-xl lg:text-2xl font-bold mb-4">
           Submit an RFQ
@@ -308,41 +308,43 @@
       <p class="mb-8">Download our line card to learn more about our CNC machining services.</p>
 
       <!-- modal window -->
-      <div id="modal-overlay" class="hidden fixed inset-0 bg-black bg-opacity-75 flex items-center justify-center z-50">
-        <div id="modal-container" class="bg-white text-black rounded-2xl shadow-xl p-10 w-full max-w-md">
-          <div class="mx-auto flex justify-between items-center mb-4">
-            <h2 class="text-lg font-semibold">Download Our Line Card</h2>
-            <button id="close-modal"
-              class="text-2xl shadow-2xl active:translate-y-[3px] transition-transform duration-150 ease-out"> 
-              <i class="fa-solid fa-xmark"></i>
-            </button>
-          </div>
-          <div class="modal-body">
-            <div class="flex flex-col gap-4">
-              <form id="rfq-form" method="POST" action="#" class="space-y-4">
-                <div>
-                  <label class="block mb-1 font-medium text-left" for="name">Name:</label>
-                  <input type="text" id="user-name" name="user-name" class="w-full border-[1px] border-black px-4 py-2 rounded" placeholder="Your Name" required>
-                </div>
-                <div class="">
-                  <label class="block mb-1 font-medium text-left" for="email">E-mail:</label>
-                  <input type="email" id="user-email" name="user-email" class="w-full border-[1px] border-black px-4 py-2 rounded" placeholder="Your E-mail" required>
-                </div>
-                <div>
-                  <label class="block mb-1 font-medium text-left" for="name">Company Name:</label>
-                  <input type="text" id="company-name" name="company-name" class="w-full border-[1px] border-black px-4 py-2 rounded align-top" placeholder="Please enter your Company name" required>
-                </div>
-                <div class="modal-footer py-6 text-right">
-                  <button
-                    class="border border-blue-600 bg-blue-500 hover:bg-blue-600 text-white w-2/5 py-2 rounded-xl shadow-3xl active:translate-y-[3px] transition-transform duration-150 ease-out">Submit</button>
-                </div>
-              </form>
-              <a href="./asssets/LineCard.pdf" download class="underline mx-auto py-2 text-gray-200">Download Line
-                Card Anyways
-              </a>
+      <div id="modal-overlay" class="hidden fixed inset-0 bg-black bg-opacity-75 z-50">
+        <div class="flex items-center justify-center w-full h-full p-4">
+          <div id="modal-container" class="bg-white text-black rounded-2xl shadow-xl p-10 w-full max-w-md">
+            <div class="mx-auto flex justify-between items-center mb-4">
+              <h2 class="text-lg font-semibold">Download Our Line Card</h2>
+              <button id="close-modal"
+                class="text-2xl shadow-2xl active:translate-y-[3px] transition-transform duration-150 ease-out"> 
+                <i class="fa-solid fa-xmark"></i>
+              </button>
+            </div>
+            <div class="modal-body">
+              <div class="flex flex-col gap-4">
+                <form id="rfq-form" method="POST" action="#" class="space-y-4">
+                  <div>
+                    <label class="block mb-1 font-medium text-left" for="name">Name:</label>
+                    <input type="text" id="user-name" name="user-name" class="w-full border-[1px] border-black px-4 py-2 rounded" placeholder="Your Name" required>
+                  </div>
+                  <div class="">
+                    <label class="block mb-1 font-medium text-left" for="email">E-mail:</label>
+                    <input type="email" id="user-email" name="user-email" class="w-full border-[1px] border-black px-4 py-2 rounded" placeholder="Your E-mail" required>
+                  </div>
+                  <div>
+                    <label class="block mb-1 font-medium text-left" for="company-name">Company Name:</label>
+                    <input type="text" id="company-name" name="company-name" class="w-full border-[1px] border-black px-4 py-2 rounded align-top" placeholder="Please enter your Company name" required>
+                  </div>
+                  <div class="modal-footer py-6 text-right">
+                    <button
+                      class="border border-blue-600 bg-blue-500 hover:bg-blue-600 text-white w-2/5 py-2 rounded-xl shadow-3xl active:translate-y-[3px] transition-transform duration-150 ease-out">Submit</button>
+                  </div>
+                </form>
+                <a href="./assets/LineCard.pdf" download class="underline mx-auto py-2 text-gray-200">Download Line
+                  Card Anyways
+                </a>
+              </div>
             </div>
           </div>
-        </div>
+        </div> <!-- end centering wrapper -->
       </div>
 
       <!-- Button to open modal -->
@@ -366,9 +368,9 @@
           modalOverlay.classList.add('hidden');
         });
 
-        // Optional: Close modal when clicking outside the modal container
+        // Close modal when clicking outside the modal card
         modalOverlay.addEventListener('click', (event) => {
-          if (event.target === modalOverlay) {
+          if (!event.target.closest('#modal-container')) {
             modalOverlay.classList.add('hidden');
           }
         });
@@ -378,22 +380,22 @@
     <div class="border-t-[1px] border-black dark:border-white w-[60%] mx-auto my-8 rounded-full"></div>
     
     <!-- contact Section -->
-    <section id="contact" class="w-full items-center flex flex-col mx-auto max-w-5xl py-4 text-sm">
+    <section id="contact" class="w-full items-center flex flex-col mx-auto max-w-4xl py-4 text-sm">
       <!-- Header -->
       <div class="py-8">
           <h2 class="text-xl lg:text-2xl font-bold mb-4">Get in Touch</h2>
           <p class="mb-6">Stay updated with our latest news</p>
       </div>
-      <article class="flex flex-col lg:flex-row max-w-4xl mx-auto lg:mx-0">
+      <article class="flex flex-col lg:flex-row max-w-4xl items-center mx-auto lg:mx-0">
         <!-- Map -->
         <iframe
           src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d7122.569083044575!2d-80.09464552382428!3d26.799067076715026!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x88d8d567282e928d%3A0xee1fb5051a1ae1ae!2s8360%20Currency%20Dr%20%23%207%2C%20Riviera%20Beach%2C%20FL%2033404!5e0!3m2!1sen!2sus!4v1753418667294!5m2!1sen!2sus"
-          class="w-350px h-[350px] md:w-[400px] md:h-[350px] px-8" style="border:0;"
+          class="w-350px h-[400px] md:w-[450px] md:px-8" style="border:0;"
           allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade">
         </iframe>
         <!-- Contact Form (with Alpine state for modal) -->
-        <div class="w-full lg:w-1/2 mx-auto text-center" x-data="{ showModal:false }" @contact-sent.window="showModal = true">
-          <form id="contact-form" method="POST" action="#" class="space-y-6">
+        <div class="w-full lg:w-full mx-auto text-center py-8" x-data="{ showModal:false }" @contact-sent.window="showModal = true">
+          <form id="contact-form" method="POST" action="#" class="space-y-6 md:w-[450px]">
             <div>
               <label for="name" class="block mb-1 font-medium text-left">Name:</label>
               <input type="text" id="name" name="name" autocomplete="name" placeholder="John Smith..."
@@ -449,11 +451,11 @@
       </div>
       <div class="flex flex-row items-center justify-center gap-8">
         <div class="flex flex-row items-center justify-center">
-          <label for="social-media">FaceBook</label>
+          <p class="">FaceBook</p>
           <i class="fa-brands fa-facebook-f fa-lg px-4"></i>
         </div>
         <div class="flex flex-row items-center justify-center">
-          <label for="linkedin">LinkedIn</label>
+          <p class="" >LinkedIn</p>
           <i class="fa-brands fa-linkedin-in fa-lg px-4"></i>
         </div>
       </div>
@@ -464,6 +466,8 @@
     <!-- Footer -->
     <footer class="py-12 text-sm">
       <p class="dark:text-white font-semibold">© 2025 Contracting CnC Machining. All rights reserved.</p>
+      <p class="invisible">Serving aerospace, automotive, and marine industries nationwide from our CNC machine shop in West Palm Beach,
+        Florida.</p>
     </footer>
   </div>
 </body>
