@@ -503,6 +503,9 @@
   .align-top {
     vertical-align: top;
   }
+  .font-\[Roboto_Flex\] {
+    font-family: Roboto Flex;
+  }
   .text-2xl {
     font-size: var(--text-2xl);
     line-height: var(--tw-leading, var(--text-2xl--line-height));

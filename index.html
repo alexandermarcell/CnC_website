@@ -1,5 +1,5 @@
 <!doctype html>
-<html>
+<html lang="en">
 
 <head>
   <meta charset="UTF-8">
@@ -7,8 +7,9 @@
 
   <!-- Title -->
   <title>Contracting CNC Machining | Precision Fasteners & CNC Services</title>
+  <link rel="canonical" href="https://www.contractingcnc.com/">
   <!-- Standard favicon -->
-  <link rel="icon" type="image/x-icon" href="./images/favicon-64x64.png">
+  <link rel="icon" type="image/png" sizes="64x64" href="./images/favicon-64x64.png">
 
   <!-- PNG versions for better resolution -->
   <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
@@ -32,13 +33,14 @@
   <meta property="og:title" content="CNC Machining Services & Precision Fasteners | Florida">
   <meta property="og:description"
     content="Reliable ISO 9001 CNC machine shop in Florida. Precision machining, custom fastener manufacturing, and bar-fed CNC turning.">
-  <meta property="og:image" content="https://www.contractingcnc.com">
+  <meta property="og:image" content="https://www.contractingcnc.com/images/og-cover.jpg">
   <meta property="og:url" content="https://www.contractingcnc.com">
   <meta name="twitter:card" content="summary_large_image">
 
   <!-- font -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preload" href="https://fonts.googleapis.com/css2?family=Roboto+Flex:opsz,wght@8..144,100..1000&display=swap"
+    as="style">
   <link href="https://fonts.googleapis.com/css2?family=Roboto+Flex:opsz,wght@8..144,100..1000&display=swap"
     rel="stylesheet">
   
@@ -48,7 +50,6 @@
     content="Delivering high-quality CNC-machined fasteners and manufacturing services since 2006. Trusted nationwide.">
   <meta property="og:image" content="https://www.contractingcnc.com">
   <meta property="og:url" content="https://www.contractingcnc.com">
-  <meta name="twitter:card" content="summary_large_image">
 
 
   <link rel="stylesheet" href="dist/output.css">
@@ -79,7 +80,7 @@
   <!--JS for email submit-->
   <script type="text/javascript">
     window.onload = function () {
-      <!-- Contact Form-->
+      //Contact Form
       document.getElementById('contact-form').addEventListener('submit', function (event) {
         event.preventDefault();
         emailjs.sendForm('service_150a14s', 'template_2lyntg9', this)
@@ -134,7 +135,7 @@
   </script>
 </head>
 
-<body class="flex flex-col mx-auto bg-white text-black dark:bg-black dark:text-white w-full max-w-7xl text-center text-sm font-[Roboto Flex]">
+<body class="flex flex-col mx-auto bg-white text-black dark:bg-black dark:text-white w-full max-w-7xl text-center text-sm font-[Roboto_Flex]">
   <div class="mx-auto max-w-6xl bg-slate-50 dark:bg-black justify-center items-center object-cover">
     <div class="block sm:hidden text-center text-red-600 p-4 bg-yellow-100">
       This site is best viewed on a screen 640px wide or larger.
@@ -143,7 +144,8 @@
     <!-- Hero Section -->
     <header class="w-full flex flex-col items-center justify-center mx-auto max-w-4xl py-8">
       <div class="flex flex-col ">
-        <img class="mx-auto w-3/5 md:w-3/6 lg:w-lg" src="./images/logo2.png" alt="ISO 9001 CNC machine shop in Florida producing precision fasteners">
+        <img src="./images/logo2.png" fetchpriority="high" decoding="async"
+          alt="ISO 9001 CNC machine shop in Florida producing precision fasteners" class="mx-auto w-3/5 md:w-3/6 lg:w-1/2">
         <h1 class="text-lg md:text-xl font-bold p-6">
           8360 Currency Dr #7 <br> Riviera Beach, FL 33404
         </h1>
@@ -177,7 +179,8 @@
       <!-- Responsive Grid -->
       <div class="grid grid-cols-1 md:grid-cols-2 gap-4 max-w-6xl mx-auto px-4">
         <template x-for="(img, index) in images" :key="index">
-          <img @click="open(index)" :src="img" class="w-[70vw] h-auto mx-auto rounded-lg shadow-md object-cover cursor-pointer"
+          <img @click="open(index)" :src="img" loading="lazy" decoding="async" width="1200" height="800"
+            class="w-[70vw] h-auto mx-auto rounded-lg shadow-md object-cover cursor-pointer"
             alt="ISO 9001 CNC machine shop in Florida producing precision fasteners">
         </template>
       </div>
